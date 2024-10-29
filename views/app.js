@@ -1,3 +1,4 @@
+/*Menu hamburgesa movil*/
 const hamburgerBtn = document.getElementById('hamburger-btn');
 const sidebar = document.getElementById('sidebar');
 const navclose = document.getElementById('navbar-close');
@@ -13,4 +14,17 @@ hamburgerBtn.addEventListener('click', () => {
 
 navclose.addEventListener('click', () => {
     sidebar.style.display = 'none';
-})
+});
+
+
+/*Proyectos*/
+const Pglilis = document.getElementById('lilis');
+const hiddenlilis = document.getElementById('hlilis');
+
+Pglilis.addEventListener('click', () =>{
+    hiddenlilis.style.display = 'flex';
+});
+
+hiddenlilis.addEventListener('click', () =>{
+    hiddenlilis.style.display = 'hiddden';
+});
