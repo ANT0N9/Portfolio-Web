@@ -122,7 +122,7 @@ p {
     width: 350px;
     height: 350px;
     background-color: #0c4a6e;
-    position: relative;
+    position:sticky;
     clip-path: polygon(50% 0%, 90% 25%, 90% 75%, 50% 100%, 10% 75%, 10% 25%);
     box-shadow: 0px 5px 10px #0c4a6e;
 }
