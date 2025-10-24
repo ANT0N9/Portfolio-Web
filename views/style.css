@@ -1,6 +1,4 @@
-*{
-    margin: 0;
-}
+/*Scrollbar*/
 
 body::-webkit-scrollbar {
     width: 8px;
@@ -31,246 +29,190 @@ body::-webkit-scrollbar-track:active {
   background: #27272a;
 }
 
-html{
-    background-color: rgb(24 24 27);
-    color: white;
+/* ===== TIPOGRAFÍA ===== */
+.font-custom {
+    font-family: 'Cutive Mono', monospace;
 }
 
-p {
-    font-size: 1.25rem/* 24px */;
-    line-height: 1.75rem/* 32px */;
+/* ===== COLORES BASE ===== */
+body {
+    background-color: #1a1a1a;
 }
 
-.class-p{
-    background: linear-gradient(45deg, #2563eb, #60a5fa, #bfdbfe, #9ca3af, #475569);
-    background-size: 400% 400%;
+header {
+    background-color: #1f2937;
+}
+
+
+/* ===== ANIMACIONES Y FORMAS ===== */
+
+/* Contenedor hexagonal para la foto de perfil */
+.hexagon-container {
+    padding: 20px;
+    width: 500px;
+    height: 500px;
     position: relative;
-    animation: cambio 10s ease-in-out infinite;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    animation: float 3s ease-in-out infinite;
 }
 
-@keyframes cambio{
-    0% {background-position: 0 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0 50%;}
-}
-
-.icon{
-    width: 40px;
-    height: 40px;
-}
-
-@media (min-width: 768px) {
-    .icon{
-        width: 50px;
-        height: 50px;
-    }
-}
-
-.icono{
-    width: 40px;
-    height: 40px;
-}
-
-@media (min-width: 768px) {
-    .icono{
-        width: 80px;
-        height: 80px;
-    }
-}
-
-.icon-tabler-brand-html5:hover {
-    transition: 0.5s;
-    stroke: #ea580c;
-}
-
-.icon-tabler-brand-css3:hover {
-    transition: 0.5s;
-    stroke: #2563eb;
-}
-
-.icon-tabler-brand-javascript:hover {
-    transition: 0.5s;
-    stroke: #eab308;
-}
-
-.icon-tabler-brand-tailwind:hover {
-    transition: 0.5s;
-    stroke: #0284c7;
-}
-
-.icon-tabler-brand-mongodb:hover {
-    transition: 0.5s;
-    stroke: #16a34a;
-}
-
-.icon-tabler-brand-nodejs:hover {
-    transition: 0.5s;
-    stroke: #0f833a;
-}
-
-.icon-tabler-brand-wordpress:hover {
-    transition: 0.5s;
-    stroke: #0073AA;
-}
-
-.icon:hover{
-    transition: 0.5s;
-    stroke: #0c4a6e;
-}
-
-.hexagon {
-    width: 350px;
-    height: 350px;
-    background-color: #0c4a6e;
-    position:sticky;
-    clip-path: polygon(50% 0%, 90% 25%, 90% 75%, 50% 100%, 10% 75%, 10% 25%);
-    box-shadow: 0px 5px 10px #0c4a6e;
-}
-
-@media (min-width: 768px) {
-    .hexagon {
-        width: 500px;
-        height: 500px;
-        background-color: #0c4a6e;
-        position: relative;
-        clip-path: polygon(50% 0%, 90% 25%, 90% 75%, 50% 100%, 10% 75%, 10% 25%);
-        box-shadow: 0px 5px 10px #0c4a6e;
-    }
-}
-  
-.hexagon img {
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   width: 80%;
-   height: auto;
-}
-
-h1, h2, h3{
-    font-family:'Courier New', Courier, monospace;
-}
-
-.hexagon:hover{
-    transition: 1s;
-    background-color:#475569;
-}
-
-li:hover{
-    color: white;    
-}
-
-@media (min-width: 768px) {
-    #divHex {
-        display: block;
-    }
-}
-
-.hexagon2 {
-    background-color: #0c4a6e;
-    clip-path: ellipse(80% 35% at 10% 25%);
-}
-
-/*Icon Whatsapp*/
-.btn-wsp{
-    position:fixed;
-    width:60px;
-    height:60px;
-    line-height: 63px;
-    bottom:25px;
-    right:25px;
-    background:#25d366;
-    color:#FFF;
-    border-radius:50px;
-    text-align:center;
-    font-size:35px;
-    box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
-    z-index:100;
-    transition: all 300ms ease;
-}
-
-.btn-wsp:hover{
-    background: #fff;
-    color: #25d366;
-}
-@media only screen and (min-width:320px) and (max-width:768px){
-    .btn-wsp{
-        width:63px;
-        height:63px;
-        line-height: 66px;
-	}
-}
-/**/
-
-/*Proyectos*/
-.all {
-    background-size: cover;
-    background-position:center;
-    opacity: .7;
-    transition: 0.5s ease;
-}
-
-.all:hover {
-    -webkit-filter: blur(2px);
-    transition: 1s ease;
-}
-
-.lilis {
-    background-image: url("/img/Lilis.png");
-}
-    
-.cripto {
-    background-image: url("/img/Cripto.png");
-}
-
-.pokedev {
-    background-image: url("/img/PokeDev.png");
-}
-
-.serviamigo {
-    background-image: url("/img/serviamigo.png");
-}
-
-#sidebar {
-    background-color: #27272a;
-    color: #fff;
-    width: 250px;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 50;
-}
-
-#sidebar a {
-    color: #fff;
-    display: block;
-    padding: 16px;
-    text-decoration: none;
-}
-
-#sidebar a:hover {
-    background-color: #555;
-}
-
-.container {
-    position: fixed;
-    top: 0;
-    left: 0;
+.hexagon-image {
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 60;
 }
 
-.container-data {
-    background-color: rgb(39 39 42);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
+/* Animación flotante usada para la imagen y los iconos */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px); /* Altura máxima del "flote" */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* ===== SECCIONES ESPECÍFICAS ===== */
+
+/* Estilos para los iconos de tecnologías en la sección "Sobre Mí" */
+.tech-icon-floating {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Posicionamiento de cada icono de tecnología */
+.icon-pos-1 { top: 10%; left: 15%; animation-delay: 0s; }
+.icon-pos-2 { top: 25%; right: 10%; animation-delay: 0.5s; }
+.icon-pos-3 { top: 50%; left: 5%; animation-delay: 1s; }
+.icon-pos-4 { bottom: 20%; right: 20%; animation-delay: 1.5s; }
+.icon-pos-5 { top: 5%; right: 35%; animation-delay: 2s; }
+.icon-pos-6 { bottom: 10%; left: 25%; animation-delay: 2.5s; }
+.icon-pos-7 { top: 60%; right: 5%; animation-delay: 3s; }
+.icon-pos-8 { left: 20%; bottom: 40%; animation-delay: 3.5s; }
+.icon-pos-9 { top: 80%; left: 10%; animation-delay: 0.2s; }
+.icon-pos-10 { right: 15%; top: 75%; animation-delay: 0.7s; }
+.icon-pos-11 { top: 0; left: 45%; animation-delay: 1.2s; }
+
+/* Estilos para los iconos de redes sociales en la sección "Contáctame" */
+.social-icon-floating {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    animation: float 3s ease-in-out infinite;
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+}
+
+.social-icon-floating:hover {
+    filter: grayscale(0%);
+}
+
+.social-icon-floating img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Posicionamiento de cada icono social */
+.social-pos-1 { top: 10%; left: 13%; animation-delay: 0s; }
+.social-pos-2 { top: 40%; right: 15%; animation-delay: 0.5s; }
+.social-pos-3 { bottom: 10%; left: 15%; animation-delay: 1s; }
+
+
+/* Estilos para las tarjetas de proyectos en la sección "Portafolio" */
+.project-card {
+    background-color: #2a2a2a;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+/* ===== COMPONENTES DE LA INTERFAZ ===== */
+
+#sidebar {
+    transition: transform 0.3s ease-in-out;
+}
+
+#typing-animation::after {
+    content: '|';
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; } 
+    50% { opacity: 0; }
+}
+
+
+/* 
+==================================
+===== TEMA CLARO (LIGHT MODE) =====
+==================================
+*/
+
+body.light-mode {
+    background-color: #f3f4f6;
+    color: #1f2937;
+}
+
+body.light-mode header {
+    background-color: #e5e7eb;
+}
+
+body.light-mode .text-white {
+    color: #1f2937; 
+}
+
+body.light-mode .text-gray-400, body.light-mode .text-zinc-400 {
+    color: #4b5563;
+}
+
+body.light-mode a.hover\:text-sky-700:hover {
+    color: #0369a1; 
+}
+
+body.light-mode .project-card {
+    background-color: #e5e7eb;
+}
+
+body.light-mode #project-modal .bg-gray-900 {
+    background-color: #f3f4f6;
+}
+
+body.light-mode .bg-zinc-800 {
+    background-color: #d4d4d8;
+}
+
+body.light-mode .bg-sky-900 {
+    background-color: #0c4a6e;
+}
+
+body.light-mode .hover\:bg-sky-700:hover{
+    background-color: #0369a1;
+}
+
+/* Estilos del formulario de contacto en Tema Claro */
+body.light-mode #contacto .bg-zinc-900 {
+    background-color: #e5e7eb;
+}
+
+body.light-mode #contacto .bg-zinc-800 {
+    background-color: #f9fafb;
+}
+
+body.light-mode #contacto .text-gray-200 {
+    color: #1f2937;
+}
+
+body.light-mode #contacto .border-zinc-700 {
+    border-color: #d1d5db;
 }

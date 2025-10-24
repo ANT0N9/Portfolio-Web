@@ -1,304 +1,237 @@
-<html lang="en" class="scroll-smooth">
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/img/icon.png"/>
-    <title>Portfolio - Pablo Pantoja</title>
-    <link rel="stylesheet" href="/views/style.css">
+    <title>Pablo Pantoja | Portafolio</title>
+    <link rel="shortcut icon" href="/img/icono.png"/>
+    <link rel="stylesheet" href="views/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!--Icon-Font-->
-    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <nav class="grid grid-cols-2 md:hidden w-full p-3 fixed z-40 bg-zinc-900">
-        <div class="flex">
-            <a href="#">
-                <div class="bg-blue-500 text-white text-2xl font-bold flex items-center justify-center rounded-full w-10 h-10 border-5 border-indigo-500/50">P</div>
-            </a>
-            <p class="flex items-center text-center pl-2 text-lg font-bold">Pablo Pantoja</p>
-        </div>
-        <div class="w-full flex justify-end">
-            <nav>
-                <button class="text-zinc-100 w-10 h-10 focus:outline-none" @click="open = !open" id="hamburger-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                    </svg> 
+<body class="bg-zinc-900 text-white">
+
+    <!-- ===== HEADER / BARRA DE NAVEGACIÓN ===== -->
+    <header class="bg-zinc-800 sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                 <!-- Botón para cambiar la paleta de colores -->
+                <button id="color-switcher" class="p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-sky-800">
+                    <!-- Icono de Luna (para tema oscuro) -->
+                    <svg id="moon-icon" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"></path></svg>
+                    <!-- Icono de Sol (para tema claro) -->
+                    <svg id="sun-icon" class="w-6 h-6 text-white hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"></path></svg>
                 </button>
-            </nav>
-        </div>
-                 
-    </nav>
-    <nav id="sidebar" style="display: none;">
-        <button id="navbar-close" class="grid justify-end w-full">
-            <svg class="m-2 h-6 w-6 text-zinc-400 cursor-pointer hover:text-zinc-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-        </button>
-        <br>
-        <ul class=" text-zinc-300">
-            <li><a href="#acerca">
-                Sobre mi
-                </a>
-            </li>
-            <li><a href="#project">
-                Portfolio
-                </a>
-            </li>
-            <li><a href="#contacto">
-                Contactame
-                </a>
-            </li>
-        </ul>
-		<div class="mt-auto">
-			<p class="my-4 text-xs text-center text-zinc-400">
-				<span>Copyright © 2024</span>
-			</p>
-		</div>
-	</nav>
-    <nav class="hidden md:flex fixed z-50 w-full p-3 justify-between items-center bg-zinc-900">
-        <div class="">
-            <div class="flex">
-                <a href="index.html">
-                    <div class="bg-sky-900 text-white text-4xl text-bold flex items-center justify-center rounded-full w-14 h-14 border-5 border-indigo-500/50">P</div>
-                </a>
-                <p class="flex items-center justify-center pl-2 text-xl">Pablo Pantoja - Programador Full Stack</p>
             </div>
-        </div>
-        <ul class="flex gap-14 text-zinc-300 text-xl p-5">
-            <li><a href="./index.html">
-                Inicio
-                </a>
-            </li>
-            <li><a href="#acerca">
-                Sobre mi
-                </a>
-            </li>
-            <li><a href="#project">
-                Portfolio
-                </a>
-            </li>
-            <li><a href="#contacto">
-                Contactame
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <div class="grid md:flex md:p-28 pt-24 w-full md:h-full">
-        <div class="m-5 pt-5 md:pt-20 md:w-2/4 md:-order-1">
-            <h1 class="text-xl md:text-3xl">Bienvenidos</h1>
-            <h2 class="text-lg md:text-2xl">Me llamo <b class="text-xl md:text-4xl">Pablo Pantoja</b></h2>
-            <h3 class="text-lg md:text-2xl">Y soy <b class="text-sky-900">Desarrollador Web Full Stack</b></h3><br>
-            <p class="text-base">Cuento con diversas habilidades en areas de tecnologia y estoy interesado en formar parte de una organizacion que me permita aprovechar y ampliar mis habilidades.</p>
-        
-            <ul class="flex gap-10 md:gap-14 text-zinc-300 text-xl justify-center pt-10">
-                <li><a href="https://github.com/ANT0N9" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
-                      </svg>
-                    </a>
-                </li>
-                <li><a href="https://www.linkedin.com/in/pablo-pantoja-50925a275" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
-                        <path d="M8 11l0 5" />
-                        <path d="M8 8l0 .01" />
-                        <path d="M12 16l0 -5" />
-                        <path d="M16 16v-3a2 2 0 0 0 -4 0" />
-                      </svg>
-                    </a>
-                </li>
-                <li><a href="mailto:ppantojam0901@gmail.com" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
-                        <path d="M3 7l9 6l9 -6" />
-                      </svg>
-                    </a>
-                </li>
-                <li><a href="/img/CV Pablo 2024.pdf" download="CV-Pablo Pantoja">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-cv" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-                        <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-                        <path d="M11 12.5a1.5 1.5 0 0 0 -3 0v3a1.5 1.5 0 0 0 3 0" />
-                        <path d="M13 11l1.5 6l1.5 -6" />
-                      </svg>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="hexagon -order-1">
-            <img src="/img/Foto1.png" alt="" class="w-2/5">
-        </div>
-    </div>
-    <br id="acerca">
-    <br>
-    <br>
-    <div class="grid md:grid-cols-3 bg-zinc-800 w-full h-full">
-        <div class="hidden hexagon2 col-span-1" id="divHex">
-            <img src="/img/Foto1.png" alt="">
-        </div>
-        <div class="pt-5 md:pt-32 md:col-span-2 md:pr-12">
-            <h2 class="font-bold text-2xl md:text-4xl text-center p-12">Acerca de mi</h2>
-            <p class="text-base md:text-xl p-4">Soy un programador full stack, estoy entrando en el mundo del desarrollo de software, sin embargo, tengo más de 3 años de experiencia en cargos relacionados con las TIC, busco formar parte de una compañía que haga florecer mis habilidades.
-                Como mencione tengo amplia experiencia trajando en puestos relacionados con tecnologia, tambien soy Informatico titulado y poseo diversas aptitudes y actitudes que me facilitan trabajar en equipo. <br>
-            </p>
-            <div class="grid grid-cols-4 gap-5 md:gap-12 p-10 md:p-20 justify-center -order-1">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icono icon-tabler icon-tabler-brand-html5" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5z" />
-                <path d="M15.5 8h-7l.5 4h6l-.5 3.5l-2.5 .75l-2.5 -.75l-.1 -.5" />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="icono icon-tabler icon-tabler-brand-css3" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5z" />
-                <path d="M8.5 8h7l-4.5 4h4l-.5 3.5l-2.5 .75l-2.5 -.75l-.1 -.5" />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="icono icon-tabler icon-tabler-brand-javascript" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5z" />
-                <path d="M7.5 8h3v8l-2 -1" />
-                <path d="M16.5 8h-2.5a.5 .5 0 0 0 -.5 .5v3a.5 .5 0 0 0 .5 .5h1.423a.5 .5 0 0 1 .495 .57l-.418 2.93l-2 .5" />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="icono icon-tabler icon-tabler-brand-tailwind" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M11.667 6c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 2 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968zm-4 6.5c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 1.975 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968z" />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="icono icon-tabler icon-tabler-brand-mongodb" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M12 3v19" />
-                <path d="M18 11.227c0 3.273 -1.812 4.77 -6 9.273c-4.188 -4.503 -6 -6 -6 -9.273c0 -4.454 3.071 -6.927 6 -9.227c2.929 2.3 6 4.773 6 9.227z" />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="icono icon-tabler icon-tabler-brand-nodejs" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M9 9v8.044a2 2 0 0 1 -2.996 1.734l-1.568 -.9a3 3 0 0 1 -1.436 -2.561v-6.635a3 3 0 0 1 1.436 -2.56l6 -3.667a3 3 0 0 1 3.128 0l6 3.667a3 3 0 0 1 1.436 2.561v6.634a3 3 0 0 1 -1.436 2.56l-6 3.667a3 3 0 0 1 -3.128 0" />
-                <path d="M17 9h-3.5a1.5 1.5 0 0 0 0 3h2a1.5 1.5 0 0 1 0 3h-3.5" />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="icono icon-tabler icon-tabler-brand-wordpress" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff"a fill="none" stroke-linecap="round" stroke-linejoin="round"> 
-                <path d="M9.5 9h3"></path> 
-                <path d="M4 9h2.5"></path> 
-                <path d="M11 9l3 11l4 -9"></path> 
-                <path d="M5.5 9l3.5 11l3 -7"></path> 
-                <path d="M18 11c.177 -.528 1 -1.364 1 -2.5c0 -1.78 -.776 -2.5 -1.875 -2.5c-.898 0 -1.125 .812 -1.125 1.429c0 1.83 2 2.058 2 3.571z"></path> 
-                <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path> </svg> 
+             <!-- Enlaces de navegación para escritorio -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#inicio" class="text-white hover:text-sky-700">Inicio</a>
+                <a href="#sobre-mi" class="text-white hover:text-sky-700">Sobre mí</a>
+                <a href="#portafolio" class="text-white hover:text-sky-700">Portafolio</a>
+                <a href="#contacto" class="text-white hover:text-sky-700">Contáctame</a>
             </div>
+            <!-- Botón para descargar tu CV. Asegúrate de que la ruta sea correcta -->
+            <a href="/docs/CV PABLO NOV 2025.pdf" download class="hidden md:block bg-sky-900 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-full transition duration-300">
+                Descargar CV
+            </a>
+            <!-- Botón de menú hamburguesa para móviles -->
+            <div class="md:hidden flex items-center">
+                <button id="hamburger-btn" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Menú desplegable para móviles -->
+        <div id="sidebar" class="hidden md:hidden bg-zinc-900">
+            <a href="#inicio" class="block py-2 px-4 text-white hover:bg-zinc-800">Inicio</a>
+            <a href="#sobre-mi" class="block py-2 px-4 text-white hover:bg-zinc-800">Sobre mí</a>
+            <a href="#portafolio" class="block py-2 px-4 text-white hover:bg-zinc-800">Portafolio</a>
+            <a href="#contacto" class="block py-2 px-4 text-white hover:bg-zinc-800">Contáctame</a>
+            <a href="/docs/CV PABLO NOV 2025.pdf" download class="block py-2 px-4 text-white hover:bg-zinc-800">Descargar CV</a>
         </div>
-    </div>
-    <br id="project">
-    <br>
-    <br>
-    <!--<div class="container hidden" id="hlilis">
-        <div class="container-data grid grid-cols-2 gap-4">
-            <img src="/img/Lilis.png" alt="" class="row-span-2">
-            <div class="row-span-2">
-                <div>
-                    <h1 class="font-bold text-xl md:text-2xl text-center p-5">Lili's Boutique</h1>
-                    <h2 class="font-bold text-lg md:text-xl">Primer proyecto FullStack</h2><br>
+    </header>
+
+    <main>
+        <!-- ===== SECCIÓN DE BIENVENIDA ===== -->
+        <section id="inicio" class="min-h-screen">
+            <div class="container mx-auto px-6 h-full flex flex-col md:flex-row items-center justify-center">
+                <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0 md:pl-10">
+                    <!-- Edita el texto de bienvenida y tu descripción corta -->
+                    <h1 class="text-5xl font-bold mb-4 font-custom">Bienvenidos</h1>
+                    <p class="text-xl text-zinc-400 font-custom">Me llamo <span class="text-white font-bold">Pablo Pantoja</span> y soy <br><span id="typing-animation" class="text-2xl font-bold text-sky-800"></span></p>
+                    <p class="text-xl text-zinc-400 font-custom">
+                        Cuento con diversas habilidades en áreas de tecnología y estoy interesado en formar parte de una organización que me permita aprovechar y ampliar mis conocimientos.
+                    </p>
                 </div>
-                <p class="text-base md:text-lg ">Lo desarrolle con la intención de “aumentar el alcance” de la marca de ropa Lili’s Boutique, un emprendimiento cuyo objetivo es vestir a la mujer venezolana en una categoría casual y formal, de manera elegante y sexy, con prendas hechas a la medida, donde pueda verse bien y sentirse cómoda.</p><br>
-                <h2 class="font-bold text-lg md:text-xl">Tecnologias</h2>
-                <div class="flex gap-5">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="ico icon-tabler icon-tabler-brand-javascript" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#eab308" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5z" />
-                        <path d="M7.5 8h3v8l-2 -1" />
-                        <path d="M16.5 8h-2.5a.5 .5 0 0 0 -.5 .5v3a.5 .5 0 0 0 .5 .5h1.423a.5 .5 0 0 1 .495 .57l-.418 2.93l-2 .5" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="ico icon-tabler icon-tabler-brand-nodejs" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#0f833a" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M9 9v8.044a2 2 0 0 1 -2.996 1.734l-1.568 -.9a3 3 0 0 1 -1.436 -2.561v-6.635a3 3 0 0 1 1.436 -2.56l6 -3.667a3 3 0 0 1 3.128 0l6 3.667a3 3 0 0 1 1.436 2.561v6.634a3 3 0 0 1 -1.436 2.56l-6 3.667a3 3 0 0 1 -3.128 0" />
-                        <path d="M17 9h-3.5a1.5 1.5 0 0 0 0 3h2a1.5 1.5 0 0 1 0 3h-3.5" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="ico icon-tabler icon-tabler-brand-html5" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ea580c" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5z" />
-                        <path d="M15.5 8h-7l.5 4h6l-.5 3.5l-2.5 .75l-2.5 -.75l-.1 -.5" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="ico icon-tabler icon-tabler-brand-css3" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2563eb" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5z" />
-                        <path d="M8.5 8h7l-4.5 4h4l-.5 3.5l-2.5 .75l-2.5 -.75l-.1 -.5" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="ico icon-tabler icon-tabler-brand-tailwind" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#0284c7" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M11.667 6c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 2 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968zm-4 6.5c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 1.975 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968z" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="ico icon-tabler icon-tabler-brand-mongodb" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#16a34a" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M12 3v19" />
-                        <path d="M18 11.227c0 3.273 -1.812 4.77 -6 9.273c-4.188 -4.503 -6 -6 -6 -9.273c0 -4.454 3.071 -6.927 6 -9.227c2.929 2.3 6 4.773 6 9.227z" />
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </div>-->
-    <div class="w-full md:h-full">
-        <h2 class="font-bold text-center text-2xl md:text-4xl p-10 md:p-20">Mis Proyectos</h2>
-        <div class="grid grid-flow-row md:grid-cols-3 gap-8 p-4">
-            <!--AQUI VA UN DIV--><a href="https://lilis-boutique.onrender.com/" class="w-full h-72 lilis all cursor-pointer" id="lilis" target="_blank">
-
-            </a>
-            <a href="https://criptovalue.netlify.app/" class="w-full h-72 cripto all" target="_blank">
-
-            </a>
-            <a href="https://pokedev-1.netlify.app/" class="w-full h-72 pokedev all" target="_blank">
-
-            </a>
-            <a href="https://serviamigomultiservices.com/" class="w-full h-72 serviamigo all" target="_blank">
-
-            </a>
-            <div class="w-full cursor-pointer bg-black">
-                <img src="" alt="">
-            </div>
-            <div class="w-full cursor-pointer bg-black">
-                <img src="" alt="">
-            </div>
-        </div>
-    </div>
-    <br id="contacto">
-    <br>
-    <br>
-    <div class="pb-10 md:pd-1 bg-zinc-800 w-full md:h-full">
-        <h2 class="font-bold text-center text-2xl md:text-4xl p-10 md:p-20">Contactame por</h2>
-        <div class="">
-            <form class="max-w-xs md:max-w-sm mx-auto" action="https://formsubmit.co/eb2f7f3678ee1cc036f03f4037acd33e" method="POST">
-                <label for="website-admin" class="block mb-2 font-medium text-white">Nombre</label>
-                    <div class="flex">
-                        <span class="inline-flex items-center px-3 border border-e-0 rounded-s-md bg-zinc-600 text-gray-300 border-zinc-700">
-                        <svg class="w-4 h-4 text-zinc-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z"/>
-                        </svg>
-                        </span>
-                        <input type="text" id="website-admin" class="rounded-none rounded-e-lg border block flex-1 min-w-0 w-full text-sm p-2.5  bg-zinc-700 border-zinc-600 placeholder-zinc-300 text-white " placeholder="Pablo Pantoja" name="name">
+                <div class="md:w-1/2 flex justify-center">
+                    <!-- Aquí va tu imagen de perfil. Cambia la URL en '''src''' -->
+                    <div class="hexagon-container">
+                        <img src="img/foto.png" alt="Pablo Pantoja" class="hexagon-image">
                     </div>
-                    <br>
-                <label for="email-address-icon" class="block mb-2 font-medium text-white">Su correo</label>
-                <div class="flex">
-                    <span class="inline-flex items-center px-3  border border-e-0  rounded-s-md bg-zinc-600 text-gray-300 border-zinc-700">
-                        <svg class="w-4 h-4 text-zinc-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
-                            <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"/>
-                            <path d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"/>
-                        </svg>
-                    </span>
-                    <input type="email" id="website-admin" class="rounded-none rounded-e-lg  border  block flex-1 min-w-0 w-full text-sm p-2.5  bg-zinc-700 border-zinc-600 placeholder-zinc-300 text-white " placeholder="usuario@gmail.com" name="email">
                 </div>
-                <br>
-                <label for="message" class="block mb-2 font-medium text-white">Asunto</label>
-                <input type="message" id="message" class="border rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-zinc-700 border-zinc-600 text-white " name="subjet">
-                <br>
-                <label for="message" class="block mb-2 font-medium text-white">Su mensaje</label>
-                <textarea id="message" rows="4" class="block p-2.5 w-full rounded-lg border focus:ring-blue-500 focus:border-blue-500 bg-zinc-700 border-zinc-600 placeholder-zinc-300 text-white " placeholder="Aqui su comentario..." name="comments"></textarea>
-                <br>
-                <div class="flex justify-center"><button type="submit" value="Enviar" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg w-full sm:w-auto px-5 py-2.5 text-center">Enviar</button></div>
-            </form>
+            </div>
+        </section>
+
+        <!-- ===== SECCIÓN "SOBRE MÍ" ===== -->
+        <section id="sobre-mi" class="py-20 bg-zinc-800">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12">Sobre Mí</h2>
+                <!-- Contenedor relativo para los iconos flotantes -->
+                <div class="relative flex justify-center items-center" style="min-height: 500px;">
+                    <!-- Texto central -->
+                    <div class="max-w-2xl text-center z-10">
+                        <p class="text-lg text-zinc-400 font-custom">
+                            Soy un Programador Full Stack con una sólida formación académica como Ingeniero en Informática. Aunque estoy iniciando mi trayectoria formal en el desarrollo de software, aporto más de cuatro años de experiencia en roles relacionados con las Tecnologías de la Información y Comunicación, lo que me proporciona una base técnica y de negocio robusta. Mi enfoque actual está en aplicar mis conocimientos de desarrollo e integrarme a un equipo donde pueda crecer profesionalmente y contribuir activamente con mi capacidad para el trabajo en equipo y mis habilidades interpersonales y técnicas.
+                        </p>
+                    </div>
+
+                    <!-- Iconos flotantes -->
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="tech-icon-floating icon-pos-1"/>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="tech-icon-floating icon-pos-2"/>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="tech-icon-floating icon-pos-3"/>
+                    <img src="https://cdn.cdnlogo.com/logos/t/58/tailwindcss.svg" alt="Tailwind CSS" class="tech-icon-floating icon-pos-4"/>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="tech-icon-floating icon-pos-5"/>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="tech-icon-floating icon-pos-6"/>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="tech-icon-floating icon-pos-7"/>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" alt="WordPress" class="tech-icon-floating icon-pos-8"/>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="tech-icon-floating icon-pos-9"/>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="tech-icon-floating icon-pos-10"/>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-icon-floating icon-pos-11"/>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECCIÓN "PORTAFOLIO" ===== -->
+        <section id="portafolio" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12">Portafolio</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Tarjeta de Proyecto 1 -->
+                    <div class="project-card" data-project-id="1">
+                        <img src="/img/serviamigo.jpg" alt="Proyecto 1" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold">Serviamigo Multiservices</h3>
+                        </div>
+                    </div>
+                    
+                    <!-- Tarjeta de Proyecto 2 -->
+                    <div class="project-card" data-project-id="2">
+                        <img src="/img/masajes.jpg" alt="Proyecto 2" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold">Thai Home Women Massages</h3>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta de Proyecto 3 -->
+                    <div class=".project-card" data-project-id="3">
+                        <img src="/img/cargando.jpg" alt="Proyecto 3" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold">Proyecto 3</h3>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta de Proyecto 4 -->
+                    <div class=".project-card" data-project-id="4">
+                        <img src="/img/cargando.jpg" alt="Proyecto 4" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold">Proyecto 4</h3>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta de Proyecto 5 -->
+                    <div class=".project-card" data-project-id="5">
+                        <img src="/img/cargando.jpg" alt="Proyecto 5" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold">Proyecto 5</h3>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta de Proyecto 6 -->
+                    <div class=".project-card" data-project-id="6">
+                        <img src="/img/cargando.jpg" alt="Proyecto 6" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold">Proyecto 6</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECCIÓN "CONTÁCTAME" ===== -->
+        <section id="contacto" class="py-20 bg-zinc-800">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12">Contáctame</h2>
+                <div class="relative flex flex-col items-center">
+                    <!-- Formulario de Contacto -->
+                    <form action="https://formspree.io/f/xldpyogj" method="POST" class="w-full max-w-lg z-10 bg-zinc-900 p-8 rounded-lg shadow-lg">
+                        <div class="flex flex-wrap -mx-3 mb-6">
+                            <div class="w-full px-3">
+                                <label class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2" for="grid-first-name">
+                                    Nombre
+                                </label>
+                                <input name="name" class="appearance-none block w-full bg-zinc-800 text-gray-200 border border-zinc-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-zinc-700" id="grid-first-name" type="text" placeholder="Tu Nombre">
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap -mx-3 mb-6">
+                            <div class="w-full px-3">
+                                <label class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2" for="grid-password">
+                                    Correo Electrónico
+                                </label>
+                                <input name="email" class="appearance-none block w-full bg-zinc-800 text-gray-200 border border-zinc-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-zinc-700" id="email" type="email" placeholder="tu@email.com">
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap -mx-3 mb-6">
+                            <div class="w-full px-3">
+                                <label class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2" for="grid-password">
+                                    Asunto
+                                </label>
+                                <input name="subject" class="appearance-none block w-full bg-zinc-800 text-gray-200 border border-zinc-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-zinc-700" id="subject" type="text" placeholder="Asunto del mensaje">
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap -mx-3 mb-6">
+                            <div class="w-full px-3">
+                                <label class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2" for="grid-password">
+                                    Mensaje
+                                </label>
+                                <textarea name="message" class=" no-resize appearance-none block w-full bg-zinc-800 text-gray-200 border border-zinc-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-zinc-700 h-48 resize-none" id="message" placeholder="Escribe tu mensaje aquí..."></textarea>
+                            </div>
+                        </div>
+                        <div class="md:flex md:items-center">
+                            <div class="w-full">
+                                <button class="shadow bg-sky-900 hover:bg-sky-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded w-full" type="submit">
+                                    Enviar Mensaje
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Iconos de Redes Sociales Flotantes -->
+                    <a href="https://github.com/ANT0N9" target="_blank" class="social-icon-floating social-pos-1"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" alt="Github"/></a>
+                    <a href="https://www.linkedin.com/in/pablo-pantoja-50925a275/" target="_blank" class="social-icon-floating social-pos-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn"/></a>
+                    <a href="https://wa.me/584242644077" target="_blank" class="social-icon-floating social-pos-3"><img src="https://api.iconify.design/logos/whatsapp-icon.svg" alt="WhatsApp"/></a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== MODAL PARA PROYECTOS ===== -->
+    <div id="project-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
+        <div class="bg-zinc-900 rounded-lg p-8 max-w-2xl w-full relative">
+            <!-- Botón para cerrar el modal -->
+            <button id="close-modal-btn" class="absolute top-4 right-4 text-white hover:text-gray-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <!-- El contenido detallado del proyecto se inyectará aquí -->
+            <div id="modal-content">
+            </div>
         </div>
     </div>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="views/app.js"></script>
 </body>
-<a href="https://api.whatsapp.com/send?phone=+584242644077&text=Hola%21%0AVi+tu+portfolio+y+me+interesaron+tus+habilidades." class="btn-wsp" target="_blank">
-    <i class="fa fa-whatsapp p-3"></i>
-</a>
-<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-<script src="/views/app.js"></script>
 </html>
