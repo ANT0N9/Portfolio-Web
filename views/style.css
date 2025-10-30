@@ -56,7 +56,7 @@ header {
 }
 
 .hexagon-image {
-    padding: 20px;
+    padding: 15px;
     width: 100%;
     height: 100%;
 }
@@ -161,19 +161,19 @@ header {
 
 body.light-mode {
     background-color: #f3f4f6;
-    color: #1f2937;
+    color: #000000;
 }
 
 body.light-mode header {
-    background-color: #e5e7eb;
+    background-color: #E0E0E0;
 }
 
 body.light-mode .text-white {
-    color: #1f2937; 
+    color: #000000; 
 }
 
 body.light-mode .text-gray-400, body.light-mode .text-zinc-400 {
-    color: #4b5563;
+    color: #000000;
 }
 
 body.light-mode a.hover\:text-sky-700:hover {
@@ -184,7 +184,7 @@ body.light-mode .project-card {
     background-color: #e5e7eb;
 }
 
-body.light-mode #project-modal .bg-gray-900 {
+body.light-mode #project-modal .bg-zinc-900 {
     background-color: #f3f4f6;
 }
 
@@ -198,6 +198,32 @@ body.light-mode .bg-sky-900 {
 
 body.light-mode .hover\:bg-sky-700:hover{
     background-color: #0369a1;
+}
+
+/*Scrolllbar Ligth mode*/
+
+body.light-mode::-webkit-scrollbar-thumb {
+    background: #f3f4f6;
+    border-radius: 4px;
+}
+
+body.light-mode::-webkit-scrollbar-thumb:hover {
+    background: #f3f4f6;
+    box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.2);
+}
+
+body.light-mode::-webkit-scrollbar-thumb:active {
+    background-color: #E0E0E0;
+}
+
+body.light-mode::-webkit-scrollbar-track {
+    background: #E0E0E0;
+    border-radius: 4px;
+}
+
+body.light-mode::-webkit-scrollbar-track:hover,
+body.light-mode::-webkit-scrollbar-track:active {
+  background: #f3f4f6;
 }
 
 /* Estilos del formulario de contacto en Tema Claro */

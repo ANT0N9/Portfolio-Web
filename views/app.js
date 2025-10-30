@@ -110,6 +110,22 @@ document.addEventListener('DOMContentLoaded', () => {
             imageUrl: '/img/masajes.jpg',
             liveUrl: 'https://thaihomewomenmassages.com/',
             repoUrl: '#'
+        },
+        3: {
+            title: 'Pokedex',
+            description: 'Esta es una aplicación de Pokédex simple e interactiva basada en la web que muestra información sobre los primeros 151 Pokémon, utilizando datos obtenidos de la PokeAPI.',
+            technologies: ['HTML', 'CSS', 'JavaScript', 'PokeAPI'],
+            imageUrl: '/img/pokedex.png',
+            liveUrl: 'https://pokedev-1.netlify.app/',
+            repoUrl: 'https://github.com/ANT0N9/PokeDevs.git'
+        },
+        4: {
+            title: 'API REST con Python',
+            description: 'El proyecto implementa una API para gestionar usuarios, con operaciones básicas de Crear, Leer, Actualizar y Eliminar (CRUD).',
+            technologies: ['Python', 'FastAPI', 'SQLite'],
+            imageUrl: '/img/ApiREST.png',
+            liveUrl: '#',
+            repoUrl: 'https://github.com/ANT0N9/API-REST-con-Python.git'
         }
     };
 
@@ -128,13 +144,13 @@ document.addEventListener('DOMContentLoaded', () => {
             modalContent.innerHTML = `
                 <h2 class="text-3xl font-bold mb-4">${project.title}</h2>
                 <img src="${project.imageUrl}" alt="${project.title}" class="w-full h-64 object-cover mb-4">
-                <p class="text-gray-300 mb-4">${project.description}</p>
+                <p class="text-gray-400 mb-4">${project.description}</p>
                 <div class="flex flex-wrap gap-2 mb-4">
-                    ${project.technologies.map(tech => `<span class="bg-zinc-700 text-white px-2 py-1 rounded">${tech}</span>`).join('')}
+                    ${project.technologies.map(tech => `<span class="bg-zinc-700 text-zinc-100 px-2 py-1 rounded">${tech}</span>`).join('')}
                 </div>
                 <div class="flex space-x-4 mt-4">
-                    <a href="${project.liveUrl}" target="_blank" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Ir al sitio</a>
-                    <a href="${project.repoUrl}" target="_blank" class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Ver Repositorio</a>
+                    <a href="${project.liveUrl}" target="_blank" class="bg-blue-500 hover:bg-blue-600 text-zinc-100 font-bold py-2 px-4 rounded">Ir al sitio</a>
+                    <a href="${project.repoUrl}" target="_blank" class="bg-gray-600 hover:bg-gray-700 text-zinc-100 font-bold py-2 px-4 rounded">Ver Repositorio</a>
                 </div>
             `;
 
