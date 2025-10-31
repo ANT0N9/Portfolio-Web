@@ -126,7 +126,29 @@ document.addEventListener('DOMContentLoaded', () => {
             imageUrl: '/img/ApiREST.png',
             liveUrl: '#',
             repoUrl: 'https://github.com/ANT0N9/API-REST-con-Python.git'
-        }
+        },
+        5: {
+            title: 'Asistente de IA',
+            description: 'Este proyecto es un agente de IA diseñado para asistir en tareas de investigación. Utiliza el modelo de lenguaje Claude 3.5 Sonnet de Anthropic, junto con herramientas de búsqueda y guardado, para recopilar, resumir y almacenar información sobre un tema determinado.',
+            technologies: ['Python'],
+            imageUrl: '/img/IA.jpg',
+            liveUrl: '#',
+            repoUrl: 'https://github.com/ANT0N9/Asistente-IA.git'
+        },
+    };
+
+    const techColorMap = {
+        'HTML': 'bg-orange-500',
+        'CSS': 'bg-blue-500',
+        'JavaScript': 'bg-yellow-400 text-black',
+        'PokeAPI': 'bg-red-500',
+        'Python': 'bg-blue-700',
+        'FastAPI': 'bg-green-600',
+        'SQLite': 'bg-sky-500',
+        'Wordpress': 'bg-blue-400',
+        'ElementorPro': 'bg-pink-500',
+        'PHP': 'bg-indigo-500',
+        'default': 'bg-zinc-700 text-zinc-100'
     };
 
     projectCards.forEach(card => {
@@ -141,16 +163,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 repoUrl: '#'
             };
 
+            const techBadges = project.technologies.map(tech => {
+                const colorClass = techColorMap[tech] || techColorMap['default'];
+                return `<span class="px-2 py-1 rounded ${colorClass}">${tech}</span>`;
+            }).join('');
+
+            const liveUrlButton = (project.liveUrl && project.liveUrl !== '#')
+                ? `<a href="${project.liveUrl}" target="_blank" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Ir al sitio</a>`
+                : '';
+
+            const repoUrlButton = (project.repoUrl && project.repoUrl !== '#')
+                ? `<a href="${project.repoUrl}" target="_blank" class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Ver Repositorio</a>`
+                : '';
+
             modalContent.innerHTML = `
                 <h2 class="text-3xl font-bold mb-4">${project.title}</h2>
                 <img src="${project.imageUrl}" alt="${project.title}" class="w-full h-64 object-cover mb-4">
-                <p class="text-gray-400 mb-4">${project.description}</p>
+                <p class="text-gray-300 mb-4">${project.description}</p>
                 <div class="flex flex-wrap gap-2 mb-4">
-                    ${project.technologies.map(tech => `<span class="bg-zinc-700 text-zinc-100 px-2 py-1 rounded">${tech}</span>`).join('')}
+                    ${techBadges}
                 </div>
                 <div class="flex space-x-4 mt-4">
-                    <a href="${project.liveUrl}" target="_blank" class="bg-blue-500 hover:bg-blue-600 text-zinc-100 font-bold py-2 px-4 rounded">Ir al sitio</a>
-                    <a href="${project.repoUrl}" target="_blank" class="bg-gray-600 hover:bg-gray-700 text-zinc-100 font-bold py-2 px-4 rounded">Ver Repositorio</a>
+                    ${liveUrlButton}
+                    ${repoUrlButton}
                 </div>
             `;
 
