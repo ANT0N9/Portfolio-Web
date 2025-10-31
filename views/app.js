@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
             modalContent.innerHTML = `
                 <h2 class="text-3xl font-bold mb-4">${project.title}</h2>
                 <img src="${project.imageUrl}" alt="${project.title}" class="w-full h-64 object-cover mb-4">
-                <p class="text-gray-300 mb-4">${project.description}</p>
+                <p class="text-white mb-4">${project.description}</p>
                 <div class="flex flex-wrap gap-2 mb-4">
                     ${techBadges}
                 </div>
